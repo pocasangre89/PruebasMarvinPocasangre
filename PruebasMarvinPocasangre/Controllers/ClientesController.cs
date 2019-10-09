@@ -18,24 +18,20 @@ namespace PruebasMarvinPocasangre.Controllers
         [HttpGet]
         public string GetList()
         {
-
-            //SaveData("Marvin", "Pocasangre", "pocasangre89@gmail.com");
-            //UpdateData(1, "Wilfredo", "Pocasangre", "pocasangre90@gmail.com");
-            //DeleteData (2);
-
             Clases.SQLPROCESS obj = new Clases.SQLPROCESS();
             return JsonConvert.SerializeObject(obj.ListarClientes(), Formatting.Indented ); 
         }
 
         // GET: api/Clientes/5
-        [HttpGet("{Nombre},{Apellido}, {Correo}", Name = "SaveData")]
+        [HttpGet("{Nombre}/{Apellido}/{Correo}", Name = "SaveData")]
         public string SaveData(string Nombre, string Apellido, string Correo)
         {
             Clases.SQLPROCESS obj = new Clases.SQLPROCESS();
             return obj.SaveClientes(Nombre, Apellido, Correo);
         }
 
-        [HttpGet("{id},{Nombre},{Apellido},{Correo}", Name = "UpdateData")]
+        [HttpGet("{id}/{Nombre}/{Apellido}/{Correo}", Name = "UpdateData")]
+        
         public string UpdateData(int id, string Nombre, string Apellido, string Correo)
         {
             Clases.SQLPROCESS obj = new Clases.SQLPROCESS();

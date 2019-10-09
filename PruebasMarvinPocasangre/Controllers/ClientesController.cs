@@ -19,9 +19,9 @@ namespace PruebasMarvinPocasangre.Controllers
         public string GetList()
         {
 
-            SaveData("Marvin", "Pocasangre", "pocasangre89@gmail.com");
-            UpdateData(1, "Wilfredo", "Pocasangre", "pocasangre90@gmail.com");
-            DeleteData (2);
+            //SaveData("Marvin", "Pocasangre", "pocasangre89@gmail.com");
+            //UpdateData(1, "Wilfredo", "Pocasangre", "pocasangre90@gmail.com");
+            //DeleteData (2);
 
             Clases.SQLPROCESS obj = new Clases.SQLPROCESS();
             return JsonConvert.SerializeObject(obj.ListarClientes(), Formatting.Indented ); 
